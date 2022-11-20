@@ -1,0 +1,53 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %} | Mi Web Personal</title>
+</head>
+<body>
+    <h1>Mi Web Personal</h1>
+    <ul>
+        <li><a href="/">Portada</a></li>
+        <li><a href="/about/">Acerca de</a></li>
+        <li><a href="/portfolio/">Portafolio</a></li>
+        <li><a href="/contact/">Contacto</a></li>
+    </ul>
+    {% block content %}{% endblock %}
+</body>
+</html>
+-->
+<!-- Estilos y fuentes del template -->
+{% load static %}
+
+<title>{% block title %}{% endblock %} | Juan Pérez (Ingeniero)</title>
+
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Portada</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about-me' %}">Acerca de</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'portfolio' %}">Portafolio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contacto</a>
+        </li>
+        <li class="nav-item">
+            <a class="navbar-brand" href="{% url 'home' %}">Juan Pérez</a>
+        </li>
+    </ul>
+</div>
+
+<!-- Contenido -->
+{% block content %}{% endblock %}
+
+<!-- Bootstrap y Javascripts -->
+<script src="{% static 'static/core/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'static/core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'static/core/js/clean-blog.min.js' %}"></script>
